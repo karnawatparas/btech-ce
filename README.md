@@ -1,26 +1,5 @@
-# Java Implementation of Data Structures and Algorithms
+# Repo for Undergraduate Course
 
-## The implementations are solely for the understanding of Java as a programming language and revising the Data Structures and Algorithms
+## The implementations are either assignments or practice
 
-1. [Numbers](./numbers/)
-   > - [Check Prime](./numbers/Prime.java)
-   > - [Sieve of Eratosthenes](./numbers/SieveOfEratosthenes.java)
-   > - [Armstrong numbers](./numbers/Armstrong.java)
-   > - [Factorial](./numbers/Factorial.java)
-   > - [Fibonacci](./numbers/Fibonacci.java)
-2. [Data Structures](./data-structures)
-   > - [Stack](./data-structures/Stack.java)
-   > - [Queue](./data-structures/Queue.java)
-3. [Patterns](./patterns/)
-   > - [Floyd's Triangle](./patterns/FloydTriangle.java)
-   > - [Pascal's Triangle](./patterns/PascalsTriangle.java)
-4. [Sorting](./sorting/)
-   > - [Bubble Sort](./sorting/BubbleSort.java)
-   > - [Merge Sort](./sorting/MergeSort.java)
-   > - [Quick Sort](./sorting/QuickSort.java)
-5. [Searching](./searching/)
-   > - [Linear Search](./searching/Linear.java)
-   > - [Binary Search](./searching/Binary.java)
-6. [String](./strings/)
-   > - [Substring Occurences](./strings/Substring.java)
-   > - [Palindrome Check](./strings/Palindrome.java)
+1. [Semester-5](./Semester-5/)
