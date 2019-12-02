@@ -9,6 +9,8 @@
    > - [Factorial](./numbers/Factorial.java)
    > - [Fibonacci](./numbers/Fibonacci.java)
 2. [Data Structures](./data-structures)
+   > - [Stack](./data-structures/Stack.java)
+   > - [Queue](./data-structures/Queue.java)
 3. [Patterns](./patterns/)
    > - [Floyd's Triangle](./patterns/FloydTriangle.java)
    > - [Pascal's Triangle](./patterns/PascalsTriangle.java)
