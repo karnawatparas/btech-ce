@@ -17,6 +17,8 @@
    > - [Merge Sort](./sorting/MergeSort.java)
    > - [Quick Sort](./sorting/QuickSort.java)
 5. [Searching](./searching/)
+   > - [Linear Search](./searching/Linear.java)
+   > - [Binary Search](./searching/Binary.java)
 6. [String](./strings/)
    > - [Substring Occurences](./strings/Substring.java)
    > - [Palindrome Check](./strings/Palindrome.java)
