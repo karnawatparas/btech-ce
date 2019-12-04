@@ -12,4 +12,6 @@
    > - [First In First Out](./Page-Replacement/fifo.c)
    > - [Least Recently Used](./Page-Replacement/lru.c)
    > - [Optimal Page Replacement](./Page-Replacement/opt.c)
-   
+4. [Producer Consumer Problem](./Producer-Consumer-Problem/producer_consumer.c)
+5. [Reader Writer Problem](./Reader-Writer-Problem/reader-writer.c)
+6. [Dining Philosophers Problem](./Dining-Philosophers-Problem/dining-philosopher.c)
