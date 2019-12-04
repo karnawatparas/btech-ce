@@ -40,7 +40,7 @@ BEGIN {
 	}
 
 	# $0 is used to point the whole line
-	print $1, " : Percetange - ", total, "%, Grade - ", grade
+	print $1, " : Percentage - ", total, "%, Grade - ", grade
 }
 
 END {

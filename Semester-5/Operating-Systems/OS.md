@@ -15,3 +15,10 @@
 4. [Producer Consumer Problem](./Producer-Consumer-Problem/producer_consumer.c)
 5. [Reader Writer Problem](./Reader-Writer-Problem/reader-writer.c)
 6. [Dining Philosophers Problem](./Dining-Philosophers-Problem/dining-philosopher.c)
+7. [Disk-Scheduling](./Disk-Scheduling/)
+   > - [FCFS](./Disk-Scheduling/fcfs.c)
+   > - [SSTF](./Disk-Scheduling/sstf.c)
+   > - [SCAN](./Disk-Scheduling/scan.c)
+   > - [CSCAN](./Disk-Scheduling/cscan.c)
+8. [AWK - Aho Weinberger Kernighan](./AWK-Programming/calculate-grade.awk) [[Input](./AWK-Programming/grades.txt)]
+9. [Shell Programming](./Shell-Programming/switch_case.sh)
