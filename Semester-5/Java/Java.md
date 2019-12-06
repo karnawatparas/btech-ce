@@ -1,6 +1,7 @@
 # Java OOP - Data Structures - Algorithms
 
 1. [Numbers](./numbers/)
+   > - [Conversion](./numbers/conversions/Conversion.java)
    > - [Check Prime](./numbers/Prime.java)
    > - [Sieve of Eratosthenes](./numbers/SieveOfEratosthenes.java)
    > - [Armstrong numbers](./numbers/Armstrong.java)
@@ -24,3 +25,5 @@
 6. [String](./strings/)
    > - [Substring Occurences](./strings/Substring.java)
    > - [Palindrome Check](./strings/Palindrome.java)
+   > - [Sort String](./strings/Sort.java)
+   > - [Permutations - Without Repetition](./strings/Permutations.java)
