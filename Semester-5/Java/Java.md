@@ -10,6 +10,7 @@
    > - [Stack](./data-structures/Stack.java)
    > - [Queue](./data-structures/Queue.java)
    > - [Singly Linked List](./data-structures/LinkedList.java)
+   > - [Binary Search Tree](./data-structures/BinarySearchTree.java)
 3. [Patterns](./patterns/)
    > - [Floyd's Triangle](./patterns/FloydTriangle.java)
    > - [Pascal's Triangle](./patterns/PascalsTriangle.java)
