@@ -1,0 +1,15 @@
+MACRO
+TEST &mem, &inc, &reg=AREG
+MOVER &mem, &inc
+ADD &mem, &reg
+MEND
+MACRO
+INCR &x, &y=, &z=CREG
+ADD &x, &y
+ADD &x, &z
+ADD &x, &x
+MEND
+START 200
+TEST AREG, BREG
+INCR CREG, &y=AREG, &z=BREG
+END
