@@ -1,5 +1,6 @@
 from tables import MACHINE_OPCODE_TABLE as mot, REGISTER_TABLE as rt
 from sys import exit
+from pickle import dump
 
 SYMBOL_TABLE = {}
 LITERAL_TABLE = []
@@ -17,7 +18,7 @@ LABEL_INDICATOR = ':'
 
 LOCATION_COUNTER = 0
 
-with open('source.asm', 'r') as source:
+with open('../source.txt', 'r') as source:
     SOURCE_CODE = source.readlines()
 
 for line_number, line in enumerate(SOURCE_CODE, 1):
@@ -41,7 +42,7 @@ for line_number, line in enumerate(SOURCE_CODE, 1):
 
     buffer = f"{LOCATION_COUNTER} : "
 
-    if label is not None:
+    if label is not None and label not in SYMBOL_TABLE:
         label = label.strip()
         SYMBOL_TABLE[label] = {
             'ADDRESS': LOCATION_COUNTER,
@@ -72,7 +73,12 @@ for line_number, line in enumerate(SOURCE_CODE, 1):
             SYMBOL_TABLE[label]['ADDRESS'] = LOCATION_COUNTER
             SYMBOL_TABLE[label]['SIZE'] = size
             SYMBOL_TABLE[label]['VALUE'] = value
-
+        else:
+            SYMBOL_TABLE[label] = {
+                'ADDRESS': LOCATION_COUNTER,
+                'SIZE': size,
+                'VALUE': value
+            }
         LOCATION_COUNTER = LOCATION_COUNTER + size
 
     elif mnemonic in ('LTORG', 'END'):
@@ -125,6 +131,7 @@ for line_number, line in enumerate(SOURCE_CODE, 1):
                             index = ind
                             break
                     _buffer += f"(S,{index})"
+            
             return _buffer.strip()
 
         if ',' in operands:
@@ -133,12 +140,23 @@ for line_number, line in enumerate(SOURCE_CODE, 1):
                 buffer += check_operands(operand)
                 buffer += " "
         else:
-            buffer += check_operands(operand)
+            buffer += check_operands(operands)
         LOCATION_COUNTER += size
 
     INTERMEDIATE_CODE.append(buffer)
     buffer = ""
 
 print()
-for ic in INTERMEDIATE_CODE:
-    print(ic)
+with open("../intermediate-code.txt", "w+") as output:
+    for ic in INTERMEDIATE_CODE:
+        print(ic)
+        output.write(ic + "\n")
+
+with open("../symtab.pkl", "wb+") as symtab:
+    dump(SYMBOL_TABLE, symtab)
+
+with open("../littab.pkl", "wb+") as littab:
+    dump(LITERAL_TABLE, littab)
+
+with open("../pooltab.pkl", "wb+") as pooltab:
+    dump(POOL_TABLE, pooltab)
