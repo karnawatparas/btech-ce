@@ -8,3 +8,8 @@
    > - [Input](./Macroprocessor/macro-example.txt)
    > - [Pass 1](./Macroprocessor/processing.py)
    > - [Pass 2](./Macroprocessor/expansion.py)
+3. [Flex](./Flex/)
+   > - [Count Lines and Characters](./Flex/count_lines.l)
+   > - [Perfect Number](./Flex/perfect_number.l)
+   > - [Remove comments](./Flex/remove_comments.l)
+   > - [Longest Word](./Flex/longest_word.l)
