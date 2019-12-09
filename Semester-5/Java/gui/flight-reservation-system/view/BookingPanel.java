@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import model.Booking;
+import controller.Controller;
 
 @SuppressWarnings("serial")
 public class BookingPanel extends JPanel {
@@ -18,6 +18,8 @@ public class BookingPanel extends JPanel {
     private static JRadioButton rbFemale;
     private static JComboBox<String> cbBloodGroup;
 
+    private static JLabel count;
+
     private static JComboBox<String> cbFlights;
 
     private static JButton btSubmit;
@@ -26,11 +28,11 @@ public class BookingPanel extends JPanel {
     private static GridBagLayout layout;
     private static GridBagConstraints gbc;
 
-    private static Booking bookings;
+    private static Controller bookings;
 
     public BookingPanel() {
         super();
-        bookings = new Booking();
+        bookings = new Controller();
         initComponents();
     }
 
@@ -41,6 +43,8 @@ public class BookingPanel extends JPanel {
         tfMobile = new JTextField(10);
         tfEmail = new JTextField(20);
 
+        count = new JLabel("");
+
         bgGender = new ButtonGroup();
         rbMale = new JRadioButton("Male");
         rbFemale = new JRadioButton("Female");
@@ -48,13 +52,9 @@ public class BookingPanel extends JPanel {
         bgGender.add(rbMale);
         bgGender.add(rbFemale);
 
-        String bloodGroups[] = {
-            "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"
-        };
+        String bloodGroups[] = { "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" };
 
-        String flights[] = {
-            "Flight 1", "Flight 2", "Flight 3"
-        };
+        String flights[] = { "Flight 1", "Flight 2", "Flight 3" };
 
         cbBloodGroup = new JComboBox<>(bloodGroups);
         cbFlights = new JComboBox<>(flights);
@@ -103,7 +103,16 @@ public class BookingPanel extends JPanel {
         gbc.gridx = 1;
         gbc.gridy = 0;
 
-        add(cbFlights, gbc);
+        JPanel flightsPanel = new JPanel();
+        flightsPanel.setLayout(new FlowLayout());
+        flightsPanel.add(cbFlights);
+        flightsPanel.add(count);
+
+        count.setText(String.valueOf(bookings.getCountOfPassengers(cbFlights.getSelectedIndex())));
+
+        add(flightsPanel, gbc);
+
+        cbFlights.addItemListener(new FlightListener());
 
         gbc.gridy++;
 
@@ -126,7 +135,6 @@ public class BookingPanel extends JPanel {
         add(cbBloodGroup, gbc);
 
         gbc.gridy++;
-
 
         JPanel radioPanel = new JPanel();
         radioPanel.setLayout(new FlowLayout());
@@ -161,10 +169,18 @@ public class BookingPanel extends JPanel {
             String bloodGroup = cbBloodGroup.getSelectedItem().toString();
             int flightNumber = cbFlights.getSelectedIndex();
             char gender = 'M';
-            if(bgGender.getSelection() == rbFemale) {
+            if (bgGender.getSelection() == rbFemale) {
                 gender = 'F';
             }
             bookings.addBooking(flightNumber, name, gender, age, bloodGroup, mobile, email);
+            count.setText(String.valueOf(bookings.getCountOfPassengers(cbFlights.getSelectedIndex())));
+        }
+    }
+
+    class FlightListener implements ItemListener {
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            count.setText(String.valueOf(bookings.getCountOfPassengers(cbFlights.getSelectedIndex())));
         }
     }
 }

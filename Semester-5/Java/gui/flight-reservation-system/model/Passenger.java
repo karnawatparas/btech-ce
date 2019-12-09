@@ -63,14 +63,9 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Passenger {" +
-            " name='" + getName() + "'" +
-            ", gender='" + getGender() + "'" +
-            ", age='" + getAge() + "'" +
-            ", bloodGroup='" + getBloodGroup() + "'" +
-            ", mobileNumber='" + getMobileNumber() + "'" +
-            ", emailAddress='" + getEmailAddress() + "'" +
-            "}";
+        return "Passenger {" + " name='" + getName() + "'" + ", gender='" + getGender() + "'" + ", age='" + getAge()
+                + "'" + ", bloodGroup='" + getBloodGroup() + "'" + ", mobileNumber='" + getMobileNumber() + "'"
+                + ", emailAddress='" + getEmailAddress() + "'" + "}";
     }
 
 }
