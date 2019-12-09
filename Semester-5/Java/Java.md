@@ -27,3 +27,7 @@
    > - [Palindrome Check](./strings/Palindrome.java)
    > - [Sort String](./strings/Sort.java)
    > - [Permutations - Without Repetition](./strings/Permutations.java)
+7. [GUI with Swing](./gui/)
+   > - [Flight Reservation System](./gui/flight-reservation-system/question.md)
+       - [View](./gui/flight-reservation-system/view/)
+       - [Model](./gui/flight-reservation-system/model/)
