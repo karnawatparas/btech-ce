@@ -322,9 +322,6 @@ void yyfree ( void *  );
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
-
-#define yywrap() (/*CONSTCOND*/1)
-#define YY_SKIP_YYWRAP
 typedef flex_uint8_t YY_CHAR;
 
 FILE *yyin = NULL, *yyout = NULL;
@@ -374,16 +371,16 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    2,    2,    2,
-        2,    2,    2,    2,    2,    2,    2,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        1,    1,    1,    1,    1,    1,    2,    2,    2,    2,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -439,13 +436,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "perfect_number.l"
-#line 2 "perfect_number.l"
-
-    void check(char *);
-
-#line 448 "lex.yy.c"
-#line 449 "lex.yy.c"
+#line 1 "check_palindrome.l"
+#line 2 "check_palindrome.l"
+    void check_palindrome(char *);
+#line 443 "lex.yy.c"
+#line 444 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -662,10 +657,10 @@ YY_DECL
 		}
 
 	{
-#line 8 "perfect_number.l"
+#line 5 "check_palindrome.l"
 
 
-#line 669 "lex.yy.c"
+#line 664 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -724,15 +719,15 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "perfect_number.l"
-check(yytext);
+#line 7 "check_palindrome.l"
+check_palindrome(yytext);
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 12 "perfect_number.l"
+#line 9 "check_palindrome.l"
 ECHO;
 	YY_BREAK
-#line 736 "lex.yy.c"
+#line 731 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1737,25 +1732,30 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 12 "perfect_number.l"
+#line 9 "check_palindrome.l"
 
 
-int main() {
+int yywrap() { return 1; }
+
+int main(int argc, char *argv[]) {
     yylex();
     return 0;
 }
 
-void check(char *number) {
-    int num = atoi(number);
-    int x = 0;
-    for(int i = 1; i < num; i++) {
-        if(num % i == 0) {
-            x = x + i;
+void check_palindrome(char *string) {
+    int flag = 0;
+    int len = 0;
+    while(string[len] != '\0') {
+        len++;
+    }
+    for(int i = 0, j = len - 1; i <= j; i++, j--) {
+        if(string[i] != string[j]) {
+            flag = 1;
+            break;
         }
     }
-    if(x == num) {
-        printf("A perfect number\n");
-    } else {
-        printf("Not a perfect number\n");
+    if(flag == 1) {
+        printf("Not ");
     }
+    printf("Palindrome");
 }

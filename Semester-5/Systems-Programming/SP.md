@@ -13,3 +13,5 @@
    > - [Perfect Number](./Flex/perfect_number.l)
    > - [Remove comments](./Flex/remove_comments.l)
    > - [Longest Word](./Flex/longest_word.l)
+   > - [Palindrome](./Flex/check_palindrome.l)
+   > - [Armstrong Number](./Flex/armstrong_number.l)

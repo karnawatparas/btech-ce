@@ -1,3 +1,6 @@
 *.class
 *.out
+lex.yy.c
+
 .vscode
+__pycache__
