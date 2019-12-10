@@ -37,3 +37,4 @@
 8. [Threading](./threading/)
    > - [Basic](./threading/Threading.java)
    > - [Quick Sort Threaded](./threading/QuickSortThreaded.java)
+   > - [Merge Sort Threaded](./threading/MergeSortThreaded.java)
