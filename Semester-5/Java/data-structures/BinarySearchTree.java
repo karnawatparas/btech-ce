@@ -115,7 +115,7 @@ public class BinarySearchTree {
 
 			TreeNode temp = root.getRight();
 			int minValue = temp.getData();
-			while(temp.hasLeftChild()) {
+			while (temp.hasLeftChild()) {
 				temp = temp.getLeft();
 				minValue = temp.getData();
 			}
@@ -128,33 +128,18 @@ public class BinarySearchTree {
 		return root;
 	}
 
-	private StringBuilder print(TreeNode root, String s) {
-		if (root == null) {
-			return new StringBuilder(" ");
-		} else {
-			StringBuilder tree = new StringBuilder(" ");
-			tree.append(root.toString()).append("\n");
-			if (root.hasLeftChild() && root.hasRightChild()) {
-				tree.append(s).append("|\n");
-				tree.append(s).append("|--L-- ").append(print(root.getLeft(), s + "   "));
-				tree.append(s).append("|\n");
-				tree.append(s).append("|--R-- ").append(print(root.getRight(), s + "   "));
-			} else {
-				if (root.hasLeftChild()) {
-					tree.append(s).append("|\n");
-					tree.append(s).append("|--L-- ").append(print(root.getLeft(), s + "   "));
-				} else if (root.hasRightChild()) {
-					tree.append(s).append("|\n");
-					tree.append(s).append("|--R-- ").append(print(root.getRight(), s + "   "));
-				}
-			}
-			return tree;
-		}
+	public void inorder() {
+		System.out.print("Inorder > ");
+		this.inorder(root);
+		System.out.println();
 	}
 
-	@Override
-	public String toString() {
-		return "Tree is: \n\n" + print(root, " ").toString();
+	private void inorder(TreeNode root) {
+		if (root != null) {
+			inorder(root.getLeft());
+			System.out.print(root.getData() + " ");
+			inorder(root.getRight());
+		}
 	}
 
 	public static void main(String[] args) {
@@ -163,26 +148,26 @@ public class BinarySearchTree {
 		System.out.println();
 
 		bst.insert(50);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.insert(30);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.insert(60);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.insert(20);
 		bst.insert(40);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.delete(20);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.delete(30);
-		System.out.println(bst);
+		bst.inorder();
 
 		bst.delete(50);
-		System.out.println(bst);
+		bst.inorder();
 
 		System.out.println("Found number 60 in tree? " + bst.search(60));
 		System.out.println("Found number 20 in tree? " + bst.search(20));

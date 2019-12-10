@@ -34,3 +34,6 @@
        - [Model](./gui/flight-reservation-system/model/)
        - [Controller](./gui/flight-reservation-system/controller/Controller.java)
        - [Main](./gui/flight-reservation-system/App.java)
+8. [Threading](./threading/)
+   > - [Basic](./threading/Threading.java)
+   > - [Quick Sort Threaded](./threading/QuickSortThreaded.java)
