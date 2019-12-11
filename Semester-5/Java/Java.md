@@ -7,6 +7,7 @@
    > - [Armstrong numbers](./numbers/Armstrong.java)
    > - [Factorial](./numbers/Factorial.java)
    > - [Fibonacci](./numbers/Fibonacci.java)
+   > - [GCD and LCM](./numbers/GCDandLCM.java)
 2. [Data Structures](./data-structures)
    > - [Stack](./data-structures/Stack.java)
    > - [Queue](./data-structures/Queue.java)
