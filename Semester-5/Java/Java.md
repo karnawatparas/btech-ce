@@ -16,6 +16,7 @@
 3. [Patterns](./patterns/)
    > - [Floyd's Triangle](./patterns/FloydTriangle.java)
    > - [Pascal's Triangle](./patterns/PascalsTriangle.java)
+   > - [Spiral Matrix](./patterns/SpiralMatrix.java)
 4. [Sorting](./sorting/)
    > - [Bubble Sort](./sorting/BubbleSort.java)
    > - [Merge Sort](./sorting/MergeSort.java)
